@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    height: 100vh; 
+ background-image:url('./images/Desktop\ -\ 3.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ /*linear-gradient(rgba(219,235,248, 1), transparent)*/
+
+}
+header{
+    height: 15vh;
+    background: white;
+    background: linear-gradient(to right bottom, rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-family: 'Roboto';
+    font-weight: lighter;
+    font-size: 2.5rem;
+
+}
+#logo{
+    height: 9rem;
+    width: 15rem;
+}
+.categories-section{
+    height: 10%;
+    /*background-color: aqua;*/
+    font-size: 4rem;
+}
+
+.categories{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.categories-list{
+    background-color: #A78080;
+    color: white;
+    height: 5rem; 
+    width: 18rem;
+   /*top & bottom   right & left*/
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
