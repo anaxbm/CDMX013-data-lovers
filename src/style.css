@@ -7,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    height: 100vh; 
+    height: 250vh; 
  background-image:url('./images/Desktop\ -\ 3.png');
  background-repeat: no-repeat;
  background-position: center;
@@ -38,6 +38,7 @@ h1{
     height: 10%;
     /*background-color: aqua;*/
     font-size: 4rem;
+
 }
 
 .categories{
@@ -58,4 +59,21 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.posters{
+   width: 80vw;
+    height: 100vh;
+    margin: auto;
+    /*background-color: cadetblue;*/
+    display: grid;
+    gap:1.5rem;
+    grid-auto-rows: 30rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+/*.poster{
+    ackground-color: rgb(1, 4, 158);
+}*/
+.movie-image{
+    width: 100%;
+    height: 100%;
 }
