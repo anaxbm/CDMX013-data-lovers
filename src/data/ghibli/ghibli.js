@@ -1861,7 +1861,7 @@ const data = {
       director: "Hiromasa Yonebayashi",
       producer: "Toshio Suzuki",
       poster:
-        "https://static.wikia.nocookie.net/studio-ghibli/images/4/46/The_Borrower_Arrietty.jpg",
+        "https://www.moriareviews.com/rongulator/wp-content/uploads/Arrietty-2010-poster.jpg",
       release_date: "2010",
       rt_score: "95",
       people: [

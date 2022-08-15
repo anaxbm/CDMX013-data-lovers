@@ -5,6 +5,8 @@ export const posters = films.map(function (x) {
   /*                             object    */
   return `
   <div class="poster">
+  <h2> ${x.title}  </h2>
+  <h3> ${x.release_date} </h3>
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });

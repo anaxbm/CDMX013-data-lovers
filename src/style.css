@@ -6,23 +6,24 @@
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    height: 250vh; 
- background-image:url('./images/Desktop\ -\ 3.png');
- background-repeat: no-repeat;
- background-position: center;
- background-size: cover;
+body{ height: 100vh;
+    background-image:url('./images/Desktop\ -\ 31.png');
+    background-repeat: repeat;
+    background-position: absolute;
+    background-size: cover;
+    background-attachment: fixed
  /*linear-gradient(rgba(219,235,248, 1), transparent)*/
 
 }
 header{
-    height: 15vh;
+    height: 25vh;
     background: white;
     background: linear-gradient(to right bottom, rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5rem;
 }
 h1{
     font-family: 'Roboto';
@@ -31,16 +32,16 @@ h1{
 
 }
 #logo{
-    height: 9rem;
+    height: 7rem;
     width: 15rem;
 }
 .categories-section{
     height: 10%;
-    /*background-color: aqua;*/
+    width: 100%;
+   /* background-color: aqua;*/
     font-size: 4rem;
 
 }
-
 .categories{
     height: 100%;
     display: flex;
@@ -52,8 +53,8 @@ h1{
 .categories-list{
     background-color: #A78080;
     color: white;
-    height: 5rem; 
-    width: 18rem;
+    height: 3rem; 
+    width: 15rem;
    /*top & bottom   right & left*/
     margin: auto;
     display: flex;
@@ -66,14 +67,28 @@ h1{
     margin: auto;
     /*background-color: cadetblue;*/
     display: grid;
-    gap:1.5rem;
+    gap:2.5rem;
     grid-auto-rows: 30rem;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
-/*.poster{
-    ackground-color: rgb(1, 4, 158);
-}*/
+.poster{
+    /*background-color: rgb(97, 99, 170);*/
+    background: white;
+    background: linear-gradient(to right bottom, rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3));
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: #8F8093;
+}
+.poster:hover{
+    background-color: white;
+    cursor: pointer;
+    
+}
 .movie-image{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 85%;
 }
