@@ -6,12 +6,12 @@
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
 }
-body{ height: 100vh;
+body{ min-height: 220vh;
     background-image:url('./images/Desktop\ -\ 31.png');
     background-repeat: repeat;
     background-position: absolute;
     background-size: cover;
-    background-attachment: fixed
+    background-attachment: fixed;
  /*linear-gradient(rgba(219,235,248, 1), transparent)*/
 
 }
@@ -22,7 +22,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 5rem;
 }
 h1{
@@ -63,7 +63,7 @@ h1{
 }
 .posters{
    width: 80vw;
-    height: 100vh;
+    height: 90vh;
     margin: auto;
     /*background-color: cadetblue;*/
     display: grid;
