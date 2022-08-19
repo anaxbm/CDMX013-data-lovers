@@ -18,10 +18,21 @@ export const filteredDate = films.map(function (x) {
 
 console.log(filteredDate);
 
-export const realeasedArray = filteredDate.map(function (x) {
-  return `<option value="data">${x}</option>`;
+
+/*let eigthiesFilms = films.filter( film => parseInt(film.release_date) < 1990);
+let ninetiesFilms = films.filter( film => parseInt(film.release_date) < 2000);
+let hundredsFilms = films.filter( film => parseInt(film.release_date) < 2010);
+let twentytensFilms = films.filter( film => parseInt(film.release_date) < 2022);*/
+
+let arrDecades = [1980, 1990,2000,2010,2020];
+
+
+export const filterByDate = arrDecades.map(function (x,i) {
+  return films.filter( film => parseInt(film.release_date) < x && parseInt(film.release_date) >= arrDecades[i-1]);
 });
-console.log(realeasedArray);
+
+console.log(filterByDate);
+
 /*FILTER FUNCTION*/
 /*const filteredDate = films.filter((x) => {
   return x.release_date > 0;

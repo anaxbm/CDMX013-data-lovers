@@ -17,19 +17,19 @@
         <h1>Ghibli Films Archive</h1>
       </div>
       <nav class="categories-section">
-        <input
-          type="range"
-          id="dates"
-          name="release"
-          min="1986"
-          max="2014"
-          step="1"
-          value="30"
-        />
         <ul class="categories">
           <li class="categories-list" id="release">
+
             Año de estreno
-            <select name="" id="date-values"></select>
+            <span id="rangeValue">1970</span>
+            <input 
+            type="range"
+            id="dates"
+            name="release"
+            min="1980"
+            max="2020"
+            step="10"
+        />
           </li>
           <!--  
           <li class="categories-list" id="directors" id>Directores</li>
