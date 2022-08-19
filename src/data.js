@@ -1,5 +1,6 @@
 // estas funciones son de ejemplo
 import data from "./data/ghibli/ghibli.js";
+
 const { films } = data;
 /*deconstruccion, extrayendo films del objeto data del archivo ghibli.js */
 export const posters = films.map(function (x) {
@@ -11,11 +12,19 @@ export const posters = films.map(function (x) {
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });
+let arrReleaseDate = []
+export const releaseDate = films.map(function (x) {
+   
+  return  arrReleaseDate.push(x.release_date)
 
-export const example = () => {
+  ;
+});
+
+
+/*export const example = () => {
   return "example";
 };
 
 export const anotherExample = () => {
   return "OMG";
-};
+};*/
