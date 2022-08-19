@@ -11,11 +11,19 @@ export const posters = films.map(function (x) {
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });
+/* arreglo con los años de todas las peliculas */
+export const filteredDate = films.map(function (x) {
+  return x.release_date;
+});
 
-export const example = () => {
-  return "example";
-};
+console.log(filteredDate);
 
-export const anotherExample = () => {
-  return "OMG";
-};
+export const realeasedArray = filteredDate.map(function (x) {
+  return `<option value="data">${x}</option>`;
+});
+console.log(realeasedArray);
+/*FILTER FUNCTION*/
+/*const filteredDate = films.filter((x) => {
+  return x.release_date > 0;
+});
+console.log(filteredDate);*/

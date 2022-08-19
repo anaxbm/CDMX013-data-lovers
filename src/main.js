@@ -1,12 +1,18 @@
-import { data2 } from "./data/ghibli/ghibli.js"; /* import dentro de llaves cuando no es default */
-/*import data from "./data/ghibli/ghibli.js";*/
+/* import dentro de llaves cuando no es default */
 import { posters } from "./data.js";
+import { realeasedArray } from "./data.js";
 
 const postersContainer = document.querySelector(".posters");
 console.log(postersContainer);
-
-/*const { films } = data;*/
-/*deconstruccion, extrayendo films del objeto data del archivo ghibli.js */
+const buttons = document.querySelectorAll(".categories-list");
+console.log(buttons);
+const realise = document.getElementById("date-values");
+console.log(realise);
+const date = document.getElementById("dates");
+console.log(date);
 
 postersContainer.innerHTML = posters.join("");
-console.log(posters);
+realise.innerHTML = realeasedArray.join("");
+date.addEventListener("click", function () {
+  console.log(date.value);
+});
