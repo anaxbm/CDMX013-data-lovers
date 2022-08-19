@@ -1,6 +1,5 @@
 // estas funciones son de ejemplo
 import data from "./data/ghibli/ghibli.js";
-
 const { films } = data;
 /*deconstruccion, extrayendo films del objeto data del archivo ghibli.js */
 export const posters = films.map(function (x) {
@@ -12,19 +11,19 @@ export const posters = films.map(function (x) {
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });
-let arrReleaseDate = []
-export const releaseDate = films.map(function (x) {
-   
-  return  arrReleaseDate.push(x.release_date)
-
-  ;
+/* arreglo con los años de todas las peliculas */
+export const filteredDate = films.map(function (x) {
+  return x.release_date;
 });
 
+console.log(filteredDate);
 
-/*export const example = () => {
-  return "example";
-};
-
-export const anotherExample = () => {
-  return "OMG";
-};*/
+export const realeasedArray = filteredDate.map(function (x) {
+  return `<option value="data">${x}</option>`;
+});
+console.log(realeasedArray);
+/*FILTER FUNCTION*/
+/*const filteredDate = films.filter((x) => {
+  return x.release_date > 0;
+});
+console.log(filteredDate);*/
