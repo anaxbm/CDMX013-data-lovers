@@ -17,26 +17,35 @@
         <h1>Ghibli Films Archive</h1>
       </div>
       <nav class="categories-section">
-        <input
-          type="range"
-          id="dates"
-          name="release"
-          min="1986"
-          max="2014"
-          step="1"
-          value="30"
-        />
         <ul class="categories">
           <li class="categories-list" id="release">
             Año de estreno
-            <select name="" id="date-values"></select>
-          </li>
-          <!--  
-
-          <li class="categories-list" id="directors" id>Directores</li>
+            <span id="rangeValue">1985</span>
+            <input
+              type="range"
+              id="dates"
+              name="release"
+              min="1985"
+              max="2015"
+              step="1"
+              value="1"
+            />
+          <li class="categories-list" id="directors">Directores</li>
           <li class="categories-list" id="productors">Productores</li>
-          <li class="categories-list" id="score">Puntaje</li>*/
-          -->
+        </li>
+        <li class="categories-list" id="score">
+          Puntaje
+          <span id="rangeScore">50</span>
+          <input
+            type="range"
+            id="movieScore"   
+            name="release"
+            min="50"
+            max="100"
+            step="1"
+            value="1"
+          />
+        </li>
         </ul>
       </nav>
     </header>

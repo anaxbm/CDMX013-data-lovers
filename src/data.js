@@ -11,19 +11,26 @@ export const posters = films.map(function (x) {
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });
-/* arreglo con los años de todas las peliculas */
-export const filteredDate = films.map(function (x) {
-  return x.release_date;
-});
 
-console.log(filteredDate);
+/*release date function to export */
+/* esta función utiliza un .filter, que se aplica al arreglo films, donde esta toda la data,
+y se le pide que devuelva un arreglo nuevo ya filtrado.
+donde la condicion es que regrese el objeto, si corresponde la fecha con el año que se le paso a la funcion
+ este valor year se toma desde el main, de let releaseValue = date.value; 
+es decir, se toma como referencia el valor que el usuario ha puesto en el input de fecha de estreno*/
 
-export const realeasedArray = filteredDate.map(function (x) {
-  return `<option value="data">${x}</option>`;
-});
-console.log(realeasedArray);
-/*FILTER FUNCTION*/
-/*const filteredDate = films.filter((x) => {
-  return x.release_date > 0;
-});
-console.log(filteredDate);*/
+export function filterData(year) {
+  const realiseArray = films.filter(function (film) {
+    return film.release_date === year;
+    /* checando si release_date es igual al input value, o sea el año, cuando coincida, se agregara al nuevo arreglo
+    sino coincide, entonces no se agrega*/
+  });
+  return realiseArray; /*retornando nuevo arreglo */
+}
+
+export function filterScore(score) {
+  const scoreArray = films.filter(function (film) {
+    return film.rt_score === score;
+  });
+  return scoreArray;
+}
