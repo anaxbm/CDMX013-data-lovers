@@ -83,7 +83,7 @@ h1{
     /*background-color: rgb(97, 99, 170);*/
     background: white;
     background: linear-gradient(to right bottom, rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.9));
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,6 +98,6 @@ h1{
     
 }
 .movie-image{
-    width: 80%;
-    height: 85%;
+    width: 70%;
+    height: 70%;
 }
