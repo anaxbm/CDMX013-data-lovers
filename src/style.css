@@ -60,11 +60,12 @@ h1{
 .categories-list{
     background-color: #A78080;
     color: white;
-    height: 3rem; 
+    height: 5rem; 
     width: 15rem;
    /*top & bottom   right & left*/
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
