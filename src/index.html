@@ -19,23 +19,54 @@
       <nav class="categories-section">
         <ul class="categories">
           <li class="categories-list" id="release">
-
             Año de estreno
-            <span id="rangeValue">1970</span>
-            <input 
-            type="range"
-            id="dates"
-            name="release"
-            min="1980"
-            max="2020"
-            step="10"
-        />
+            <span id="rangeValue">1985</span>
+            <input
+              type="range"
+              id="dates"
+              name="release"
+              min="1985"
+              max="2015"
+              step="1"
+              value="1"
+            />
+          <li class="categories-list" id="directors" > 
+            Directores
+            <select name="select-dir" id="select-dir">
+              <option class="directors" value="Todos" selected>Todos</option>
+              <option class="directors" value="Gorō Miyazaki">Gorō Miyazaki</option>
+              <option class="directors" value="Hayao Miyazaki">Hayao Miyazaki</option>
+              <option class="directors" value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+              <option class="directors" value="Hiroyuki Morita">Hiroyuki Morita</option>
+              <option class="directors" value="Isao Takahata">Isao Takahata</option>
+              <option class="directors" value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+            </select>
           </li>
-          <!--  
-          <li class="categories-list" id="directors" id>Directores</li>
-          <li class="categories-list" id="productors">Productores</li>
-          <li class="categories-list" id="score">Puntaje</li>*/
-          -->
+         
+          <li class="categories-list" id="productors">
+            Productores
+            <select name="select-prod" id="select-prod">
+              <option value="Todos" selected>Todos</option>
+              <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+              <option value="Isao Takahata">Isao Takahata</option>
+              <option value="Toru Hara">Toru Hara</option>
+              <option value="Toshio Suzuki">Toshio Suzuki</option>
+              <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+            </select>
+        </li>
+        <li class="categories-list" id="score">
+          Puntaje
+          <span id="rangeScore">50</span>
+          <input
+            type="range"
+            id="movieScore"   
+            name="release"
+            min="50"
+            max="100"
+            step="1"
+            value="1"
+          />
+        </li>
         </ul>
       </nav>
     </header>

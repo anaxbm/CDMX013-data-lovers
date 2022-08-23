@@ -11,30 +11,40 @@ export const posters = films.map(function (x) {
     <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
   </div>`;
 });
-/* arreglo con los años de todas las peliculas */
-export const filteredDate = films.map(function (x) {
-  return x.release_date;
-});
 
-console.log(filteredDate);
+/*release date function to export */
+/* esta función utiliza un .filter, que se aplica al arreglo films, donde esta toda la data,
+y se le pide que devuelva un arreglo nuevo ya filtrado.
+donde la condicion es que regrese el objeto, si corresponde la fecha con el año que se le paso a la funcion
+ este valor year se toma desde el main, de let releaseValue = date.value; 
+es decir, se toma como referencia el valor que el usuario ha puesto en el input de fecha de estreno*/
 
+export function filterData(year) {
+  const realiseArray = films.filter(function (film) {
+    return film.release_date === year;
+    /* checando si release_date es igual al input value, o sea el año, cuando coincida, se agregara al nuevo arreglo
+    sino coincide, entonces no se agrega*/
+  });
+  return realiseArray; /*retornando nuevo arreglo */
+}
 
-/*let eigthiesFilms = films.filter( film => parseInt(film.release_date) < 1990);
-let ninetiesFilms = films.filter( film => parseInt(film.release_date) < 2000);
-let hundredsFilms = films.filter( film => parseInt(film.release_date) < 2010);
-let twentytensFilms = films.filter( film => parseInt(film.release_date) < 2022);*/
+export function filterScore(score) {
+  const scoreArray = films.filter(function (film) {
+    return film.rt_score === score;
+  });
+  return scoreArray;
+}
 
-let arrDecades = [1980, 1990,2000,2010,2020];
+export function filterDir(director) {
+  const dirArray = films.filter(function (film) {
+    return film.director === director;
+  });
+  return dirArray;
+}
 
-
-export const filterByDate = arrDecades.map(function (x,i) {
-  return films.filter( film => parseInt(film.release_date) < x && parseInt(film.release_date) >= arrDecades[i-1]);
-});
-
-console.log(filterByDate);
-
-/*FILTER FUNCTION*/
-/*const filteredDate = films.filter((x) => {
-  return x.release_date > 0;
-});
-console.log(filteredDate);*/
+export function filterProd(producer) {
+  const prodArray = films.filter(function (film) {
+    return film.producer === producer;
+  });
+  return prodArray;
+}
