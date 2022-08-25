@@ -1,5 +1,5 @@
 /* import dentro de llaves cuando no es default */
-import { posters, filterData, filterScore, filterDir, filterProd } from "./data.js";
+import { posters, filterDate, filterScore, filterDirectors, filterProducers } from "./data.js";
 /*importando funcion de imprimir imagenes, release date y score */
 const postersContainer = document.querySelector(".posters");
 
@@ -11,9 +11,9 @@ const datesValues = document.getElementById("rangeValue");
 segun el valor que reciba...  */
 console.log(date.value);
 
-const dirInput = document.getElementById("select-dir");
+const directorsInput = document.getElementById("select-directors");
 
-const prodInput = document.getElementById("select-prod");
+const producersInput = document.getElementById("select-producers");
 
 
 const score = document.getElementById("movieScore");
@@ -29,7 +29,7 @@ date.addEventListener("input", e => {
   /* aqui, estamos haciendo que el valor que esta dentro de etiqueta span, cambie, segun el valor que reciba el input*/
   datesValues.innerHTML = releaseValue;
   /* pasando parametro del input, a la función de filterData de data.js */
-  let filteredByDate = filterData(releaseValue);
+  let filteredByDate = filterDate(releaseValue);
   /* pidiendo que muestre solo las imagenes que corresponde al arreglo filtrado, 
  al contenedor donde se muestran todas las imagenes para esto-..
   aplicamos un .map a nuestro arreglo ya filtrado, pidiendo que devuelva por cada objeto 
@@ -61,10 +61,10 @@ score.addEventListener("input", e => {
   });
 });
 
-dirInput.addEventListener("input", (e) =>
-{ let dirVal = e.target.value;
-  let filteredByDir = filterDir(dirVal);
-  postersContainer.innerHTML = filteredByDir.map(function (x) {
+directorsInput.addEventListener("input", (e) =>
+{ let directorsValue = e.target.value;
+  let filteredByDirectors = filterDirectors(directorsValue);
+  postersContainer.innerHTML = filteredByDirectors.map(function (x) {
     return `
     <div class="poster">
     <h2> ${x.title} </h2>
@@ -76,10 +76,10 @@ dirInput.addEventListener("input", (e) =>
 }
 );
 
-prodInput.addEventListener("input", (f) =>
-{ let prodVal = f.target.value;
-  let filteredByProd = filterProd(prodVal);
-  postersContainer.innerHTML = filteredByProd.map(function (x) {
+producersInput.addEventListener("input", (e) =>
+{ let producersValue = e.target.value;
+  let filteredByProducers = filterProducers(producersValue);
+  postersContainer.innerHTML = filteredByProducers.map(function (x) {
     return `
     <div class="poster">
     <h2> ${x.title} </h2>

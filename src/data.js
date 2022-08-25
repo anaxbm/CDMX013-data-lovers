@@ -19,7 +19,7 @@ donde la condicion es que regrese el objeto, si corresponde la fecha con el año
  este valor year se toma desde el main, de let releaseValue = date.value; 
 es decir, se toma como referencia el valor que el usuario ha puesto en el input de fecha de estreno*/
 
-export function filterData(year) {
+export function filterDate(year) {
   const realiseArray = films.filter(function (film) {
     return film.release_date === year;
     /* checando si release_date es igual al input value, o sea el año, cuando coincida, se agregara al nuevo arreglo
@@ -28,6 +28,8 @@ export function filterData(year) {
   return realiseArray; /*retornando nuevo arreglo */
 }
 
+console.log(filterDate('1986'));
+
 export function filterScore(score) {
   const scoreArray = films.filter(function (film) {
     return film.rt_score === score;
@@ -35,16 +37,16 @@ export function filterScore(score) {
   return scoreArray;
 }
 
-export function filterDir(director) {
-  const dirArray = films.filter(function (film) {
+export function filterDirectors(director) {
+  const directorsArray = films.filter(function (film) {
     return film.director === director;
   });
-  return dirArray;
+  return directorsArray;
 }
 
-export function filterProd(producer) {
-  const prodArray = films.filter(function (film) {
+export function filterProducers(producer) {
+  const producersArray = films.filter(function (film) {
     return film.producer === producer;
   });
-  return prodArray;
+  return producersArray;
 }
