@@ -1,23 +1,47 @@
-import {  filterDate, filterScore, filterDirectors, filterProducers} from '../src/data.js';
+import {
+  films,
+  filterDate,
+  filterScore,
+  filterDirectors,
+  filterProducers,
+} from "../src/data.js";
 
-
-describe('filterData', () => {
-  it('is a function', () => {
-    expect(typeof FilterDate).toBe('function');
+describe("filterDate", () => {
+  it("is a function", () => {
+    expect(typeof filterDate).toBe("function");
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it("Debería retornar Castle in the Sky para año de estreno 1986", () => {
+    expect(filterDate("1986")).toContain(films[0]);
   });
 });
 
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe("filterScore", () => {
+  it("is a function", () => {
+    expect(typeof filterScore).toBe("function");
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it("Debería retornar Castle in the Sky para puntuación de 95", () => {
+    expect(filterScore("95")).toContain(films[0]);
+  });
+});
+
+describe("filterDirectors", () => {
+  it("is a function", () => {
+    expect(typeof filterDirectors).toBe("function");
+  });
+
+  it("Debería retornar Castle in the Sky para director Hayao Miyazaki", () => {
+    expect(filterDirectors("Hayao Miyazaki")).toContain(films[0]);
+  });
+});
+
+describe(" filterProducers", () => {
+  it("is a function", () => {
+    expect(typeof filterProducers).toBe("function");
+  });
+
+  it("Debería retornar Castle in the Sky para productor Isao Takahata", () => {
+    expect(filterProducers("Isao Takahata")).toContain(films[0]);
   });
 });

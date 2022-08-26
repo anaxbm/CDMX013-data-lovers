@@ -1,5 +1,11 @@
 /* import dentro de llaves cuando no es default */
-import { posters, filterDate, filterScore, filterDirectors, filterProducers } from "./data.js";
+import {
+  posters,
+  filterDate,
+  filterScore,
+  filterDirectors,
+  filterProducers,
+} from "./data.js";
 /*importando funcion de imprimir imagenes, release date y score */
 const postersContainer = document.querySelector(".posters");
 
@@ -9,12 +15,11 @@ const date = document.getElementById("dates");
 const datesValues = document.getElementById("rangeValue");
 /*guardando etiqueda span de release date, que permite mostrar el valor al que el usuario cambia
 segun el valor que reciba...  */
-console.log(date.value);
+//console.log(date.value);
 
 const directorsInput = document.getElementById("select-directors");
 
 const producersInput = document.getElementById("select-producers");
-
 
 const score = document.getElementById("movieScore");
 /* guardando input de puntajes */
@@ -23,9 +28,9 @@ const scoreValues = document.getElementById("rangeScore");
 
 /* release date function */
 /*agregando un event listener a el input de fecha de estreno*/
-date.addEventListener("input", e => {
+date.addEventListener("input", (e) => {
   /* guardando el valor que el usuario elige en el input de fecha de estreno */
-  let releaseValue = date.value;
+  let releaseValue = e.target.value;
   /* aqui, estamos haciendo que el valor que esta dentro de etiqueta span, cambie, segun el valor que reciba el input*/
   datesValues.innerHTML = releaseValue;
   /* pasando parametro del input, a la función de filterData de data.js */
@@ -46,8 +51,8 @@ date.addEventListener("input", e => {
 }); /* add event listener de date, cierra aquí */
 
 /* score function */
-score.addEventListener("input", e => {
-  let scoreValue = score.value;
+score.addEventListener("input", (e) => {
+  let scoreValue = e.target.value;
   scoreValues.innerHTML = scoreValue;
   let filteredByScore = filterScore(scoreValue);
   postersContainer.innerHTML = filteredByScore.map(function (x) {
@@ -61,8 +66,8 @@ score.addEventListener("input", e => {
   });
 });
 
-directorsInput.addEventListener("input", (e) =>
-{ let directorsValue = e.target.value;
+directorsInput.addEventListener("input", (e) => {
+  let directorsValue = e.target.value;
   let filteredByDirectors = filterDirectors(directorsValue);
   postersContainer.innerHTML = filteredByDirectors.map(function (x) {
     return `
@@ -73,11 +78,10 @@ directorsInput.addEventListener("input", (e) =>
     </div>
     `;
   });
-}
-);
+});
 
-producersInput.addEventListener("input", (e) =>
-{ let producersValue = e.target.value;
+producersInput.addEventListener("input", (e) => {
+  let producersValue = e.target.value;
   let filteredByProducers = filterProducers(producersValue);
   postersContainer.innerHTML = filteredByProducers.map(function (x) {
     return `
@@ -88,7 +92,6 @@ producersInput.addEventListener("input", (e) =>
     </div>
     `;
   });
-}
-);
+});
 
 postersContainer.innerHTML = posters.join("");
