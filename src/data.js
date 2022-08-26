@@ -1,6 +1,6 @@
 // estas funciones son de ejemplo
 import data from "./data/ghibli/ghibli.js";
-const { films } = data;
+export const { films } = data;
 /*deconstruccion, extrayendo films del objeto data del archivo ghibli.js */
 export const posters = films.map(function (x) {
   /*                             object    */
@@ -28,7 +28,7 @@ export function filterDate(year) {
   return realiseArray; /*retornando nuevo arreglo */
 }
 
-console.log(filterDate('1986'));
+//console.log(filterDate("1986"));
 
 export function filterScore(score) {
   const scoreArray = films.filter(function (film) {
