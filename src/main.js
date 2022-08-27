@@ -47,7 +47,7 @@ date.addEventListener("input", (e) => {
     <h3> ${x.release_date} </h3>
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
     </div>`;
-  });
+  }).join("");
 }); /* add event listener de date, cierra aquí */
 
 /* score function */
@@ -63,7 +63,7 @@ score.addEventListener("input", (e) => {
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
     </div>
     `;
-  });
+  }).join("");
 });
 
 directorsInput.addEventListener("input", (e) => {
@@ -77,7 +77,7 @@ directorsInput.addEventListener("input", (e) => {
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
     </div>
     `;
-  });
+  }).join("");
 });
 
 producersInput.addEventListener("input", (e) => {
@@ -91,7 +91,7 @@ producersInput.addEventListener("input", (e) => {
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
     </div>
     `;
-  });
+  }).join("");
 });
 
 postersContainer.innerHTML = posters.join("");
