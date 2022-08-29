@@ -38,15 +38,25 @@ export function filterScore(score) {
 }
 
 export function filterDirectors(director) {
-  const directorsArray = films.filter(function (film) {
-    return film.director === director;
-  });
-  return directorsArray;
+  if (director==="Todos"){
+    return films
+  }
+  else{
+  const directorsArray = films.filter(film => film.director === director);
+//Función filtro, tiene elementos a iterar, arrow function y la condición a cumplir para que filtre.
+  return directorsArray;}
 }
 
 export function filterProducers(producer) {
+  if (producer==="Todos"){
+    return films
+  }
+  else{
   const producersArray = films.filter(function (film) {
     return film.producer === producer;
   });
-  return producersArray;
+  return producersArray;}
 }
+
+films.sort();
+console.log(films);
