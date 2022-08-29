@@ -43,7 +43,7 @@ export function filterDirectors(director) {
   }
   else{
   const directorsArray = films.filter(film => film.director === director);
-
+//Función filtro, tiene elementos a iterar, arrow function y la condición a cumplir para que filtre.
   return directorsArray;}
 }
 
@@ -57,3 +57,6 @@ export function filterProducers(producer) {
   });
   return producersArray;}
 }
+
+films.sort();
+console.log(films);

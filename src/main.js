@@ -39,8 +39,11 @@ date.addEventListener("input", (e) => {
  al contenedor donde se muestran todas las imagenes para esto-..
   aplicamos un .map a nuestro arreglo ya filtrado, pidiendo que devuelva por cada objeto 
   un div donde esten dentro el poster asi como la fecha */
-  postersContainer.innerHTML = filteredByDate.map(function (x) {
-    /*                             object    */
+  if (filteredByDate.length===0){
+    postersContainer.innerHTML = "Sorry we couldn't find the movie!"
+  }
+  else {
+    postersContainer.innerHTML = filteredByDate.map(function (x) {
     return `
     <div class="poster">
     <h2> ${x.title} </h2>
@@ -48,22 +51,29 @@ date.addEventListener("input", (e) => {
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
     </div>`;
   }).join("");
+}
 }); /* add event listener de date, cierra aquí */
+
+
 
 /* score function */
 score.addEventListener("input", (e) => {
   let scoreValue = e.target.value;
   scoreValues.innerHTML = scoreValue;
   let filteredByScore = filterScore(scoreValue);
-  postersContainer.innerHTML = filteredByScore.map(function (x) {
+  if (filteredByScore.length===0){
+    postersContainer.innerHTML = "Sorry we couldn't find the movie!"
+  }
+  else {
+    postersContainer.innerHTML = filteredByScore.map(function (x) {
     return `
     <div class="poster">
     <h2> ${x.title} </h2>
     <h3> ${x.release_date} </h3>
       <img class= "movie-image" src="${x.poster}" alt="poster" srcset="">
-    </div>
-    `;
+    </div>`;
   }).join("");
+}
 });
 
 directorsInput.addEventListener("input", (e) => {
