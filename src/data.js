@@ -57,6 +57,3 @@ export function filterProducers(producer) {
   });
   return producersArray;}
 }
-
-films.sort();
-console.log(films);
