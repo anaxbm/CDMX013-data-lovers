@@ -38,25 +38,39 @@ export function filterScore(score) {
 }
 
 export function filterDirectors(director) {
-  if (director==="Todos"){
-    return films
+  if (director === "Todos") {
+    return films;
+  } else {
+    const directorsArray = films.filter((film) => film.director === director);
+    //Función filtro, tiene elementos a iterar, arrow function y la condición a cumplir para que filtre.
+    return directorsArray;
   }
-  else{
-  const directorsArray = films.filter(film => film.director === director);
-//Función filtro, tiene elementos a iterar, arrow function y la condición a cumplir para que filtre.
-  return directorsArray;}
 }
 
 export function filterProducers(producer) {
-  if (producer==="Todos"){
-    return films
+  if (producer === "Todos") {
+    return films;
+  } else {
+    const producersArray = films.filter(function (film) {
+      return film.producer === producer;
+    });
+    return producersArray;
   }
-  else{
-  const producersArray = films.filter(function (film) {
-    return film.producer === producer;
-  });
-  return producersArray;}
 }
 
-films.sort();
-console.log(films);
+export function sortingFilms(orderOption) {
+  const filmsCopy = [...films];
+  if (orderOption === "A to Z") {
+    return filmsCopy.sort((a, b) => {
+      if (a.title < b.title) {
+        return -1;
+      }
+    });
+  } else if (orderOption === "Z to A") {
+    return filmsCopy.sort((a, b) => {
+      if (a.title > b.title) {
+        return -1;
+      }
+    });
+  }
+}

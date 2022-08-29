@@ -4,6 +4,7 @@ import {
   filterScore,
   filterDirectors,
   filterProducers,
+  sortingFilms,
 } from "../src/data.js";
 
 describe("filterDate", () => {
@@ -43,5 +44,25 @@ describe(" filterProducers", () => {
 
   it("Debería retornar Castle in the Sky para productor Isao Takahata", () => {
     expect(filterProducers("Isao Takahata")).toContain(films[0]);
+  });
+});
+
+describe("sortingFilms", () => {
+  it("is a function", () => {
+    expect(typeof sortingFilms).toBe("function");
+  });
+
+  it("Debería retornar peliculas ordenadas de la A a la Z", () => {
+    expect(sortingFilms("A to Z")[0].title).toBe("Castle in the Sky");
+  });
+
+  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
+    expect(sortingFilms("Z to A")[0].title).toBe("Whisper of the Heart");
+  });
+
+  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
+    expect(sortingFilms("Z to A")[0].title).toBe(
+      sortingFilms("A to Z")[19].title
+    );
   });
 });
