@@ -10,6 +10,7 @@ import {
 /*importando funcion de imprimir imagenes, release date y score */
 const postersContainer = document.querySelector(".posters");
 
+
 const date = document.getElementById("dates");
 /*guardando input donde el usuario buscara la fecha de estreno */
 
@@ -59,7 +60,11 @@ date.addEventListener("input", (e) => {
   aplicamos un .map a nuestro arreglo ya filtrado, pidiendo que devuelva por cada objeto 
   un div donde esten dentro el poster asi como la fecha */
   if (filteredByDate.length === 0) {
-    postersContainer.innerHTML = "Sorry we couldn't find the movie!";
+    postersContainer.innerHTML = `
+    <div class= "noFoundMessage"> 
+      <h2>Oops! =( try another one</h2>
+      <img class= "noFound-image" src="/src/images/totoroNotFoundMsg.gif" alt="no-found" srcset="">
+    </div>`;
   } else {
     postersContainer.innerHTML = filteredByDate
       .map(function (x) {
@@ -80,7 +85,11 @@ score.addEventListener("input", (e) => {
   scoreValues.innerHTML = scoreValue;
   let filteredByScore = filterScore(scoreValue);
   if (filteredByScore.length === 0) {
-    postersContainer.innerHTML = "Sorry we couldn't find the movie!";
+    postersContainer.innerHTML = postersContainer.innerHTML = `
+    <div class= "noFoundMessage"> 
+      <h2>Oops! =( try another one</h2>
+      <img class= "noFound-image" src="/src/images/totoroNotFoundMsg.gif" alt="no-found" srcset="">
+    </div>`;
   } else {
     postersContainer.innerHTML = filteredByScore
       .map(function (x) {

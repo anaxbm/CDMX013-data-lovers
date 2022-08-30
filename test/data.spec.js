@@ -35,6 +35,10 @@ describe("filterDirectors", () => {
   it("Debería retornar Castle in the Sky para director Hayao Miyazaki", () => {
     expect(filterDirectors("Hayao Miyazaki")).toContain(films[0]);
   });
+
+  it("Debería retornar Films para Todos", () => {
+    expect(filterDirectors("Todos")).toBe(films);
+  });
 });
 
 describe(" filterProducers", () => {
@@ -44,6 +48,10 @@ describe(" filterProducers", () => {
 
   it("Debería retornar Castle in the Sky para productor Isao Takahata", () => {
     expect(filterProducers("Isao Takahata")).toContain(films[0]);
+  });
+
+  it("Debería retornar Films para Todos", () => {
+    expect(filterProducers("Todos")).toBe(films);
   });
 });
 
@@ -63,6 +71,12 @@ describe("sortingFilms", () => {
   it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
     expect(sortingFilms("Z to A")[0].title).toBe(
       sortingFilms("A to Z")[19].title
+    );
+  });
+
+  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
+    expect(sortingFilms("Z to A")[1].title).toBe(
+      sortingFilms("A to Z")[18].title
     );
   });
 });

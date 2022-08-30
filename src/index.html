@@ -19,8 +19,8 @@
       <nav class="categories-section">
         <ul class="categories">
           <li class="categories-list" id="release">
-            Año de estreno
-            <span id="rangeValue">1985</span>
+            Release date
+            <span id="rangeValue">Slide</span>
             <input
               type="range"
               id="dates"
@@ -32,9 +32,10 @@
             />
           </li>
           <li class="categories-list" id="directors">
-            Directores
+            Directors 
             <select name="select-dir" id="select-directors">
-              <option class="directors" value="Todos" selected>Todos</option>
+              <optgroup class="options">
+              <option class="directors" value="All" selected>All</option>
               <option class="directors" value="Gorō Miyazaki">
                 Gorō Miyazaki
               </option>
@@ -53,23 +54,26 @@
               <option class="directors" value="Yoshifumi Kondō">
                 Yoshifumi Kondō
               </option>
+            </optgroup> 
             </select>
           </li>
 
           <li class="categories-list" id="producers">
-            Productores
+            Producers
             <select name="select-prod" id="select-producers">
-              <option value="Todos" selected>Todos</option>
+              <optgroup class="options">
+              <option value="All" selected>All</option>
               <option value="Hayao Miyazaki">Hayao Miyazaki</option>
               <option value="Isao Takahata">Isao Takahata</option>
               <option value="Toru Hara">Toru Hara</option>
               <option value="Toshio Suzuki">Toshio Suzuki</option>
               <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+              </optgroup>
             </select>
           </li>
           <li class="categories-list" id="score">
-            Puntaje
-            <span id="rangeScore">70</span>
+            Score
+            <span id="rangeScore">Start</span>
             <input
               type="range"
               id="movieScore"
@@ -81,11 +85,13 @@
             />
           </li>
           <li class="categories-list" id="orderAtoZ">
-            Ordenar por
+            Order by
             <select name="select-order" id="select-order">
-              <option value="odenar">ordenar</option>
+              <optgroup class="options">
+              <option value="order">Order by</option>
               <option value="A to Z" id="optionOrderAtoZ">A to Z</option>
               <option value="Z to A" id="optionOrderZtoA">Z to A</option>
+              </optgroup>
             </select>
           </li>
         </ul>
@@ -93,6 +99,6 @@
     </header>
 
     <section class="posters"></section>
+
     <script src="main.js" type="module"></script>
-  </body>
-</html>
+  </body
