@@ -38,7 +38,7 @@ export function filterScore(score) {
 }
 
 export function filterDirectors(director) {
-  if (director === "Todos") {
+  if (director === "All") {
     return films;
   } else {
     const directorsArray = films.filter((film) => film.director === director);
@@ -48,7 +48,7 @@ export function filterDirectors(director) {
 }
 
 export function filterProducers(producer) {
-  if (producer === "Todos") {
+  if (producer === "All") {
     return films;
   } else {
     const producersArray = films.filter(function (film) {
