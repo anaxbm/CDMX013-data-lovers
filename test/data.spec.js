@@ -37,7 +37,7 @@ describe("filterDirectors", () => {
   });
 
   it("Debería retornar Films para Todos", () => {
-    expect(filterDirectors("Todos")).toBe(films);
+    expect(filterDirectors("All")).toBe(films);
   });
 });
 
@@ -51,7 +51,7 @@ describe(" filterProducers", () => {
   });
 
   it("Debería retornar Films para Todos", () => {
-    expect(filterProducers("Todos")).toBe(films);
+    expect(filterProducers("All")).toBe(films);
   });
 });
 
