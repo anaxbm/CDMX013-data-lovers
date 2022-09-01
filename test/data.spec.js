@@ -1,3 +1,4 @@
+import { expect } from "@jest/globals";
 import {
   films,
   filterDate,
@@ -13,7 +14,9 @@ describe("filterDate", () => {
   });
 
   it("Debería retornar Castle in the Sky para año de estreno 1986", () => {
-    expect(filterDate("1986")).toContain(films[0]);
+    let mockData = [{release_date: "ana"},{release_date: "ana"},{release_date: "abril"},{release_date: "1986"}];
+    let mockResult = [{release_date: "ana"},{release_date: "ana"}];
+    expect(filterDate("ana", mockData)).toStrictEqual(mockResult);
   });
 });
 
@@ -60,23 +63,14 @@ describe("sortingFilms", () => {
     expect(typeof sortingFilms).toBe("function");
   });
 
-  it("Debería retornar peliculas ordenadas de la A a la Z", () => {
-    expect(sortingFilms("A to Z")[0].title).toBe("Castle in the Sky");
-  });
+  let mockDataSort = [{title: "sandia"},{title: "plátano"},{title: "manzana"},{title: "pitahaya"},{title: "arándanos"}];
+  let mockResultAZ = [{title: "arándanos"},{title: "manzana"},{title: "pitahaya"},{title: "plátano"},{title: "sandia"}];
+  let mockResultZA = [{title:"sandia"}, {title: "plátano"},{title: "pitahaya"}, {title: "manzana"} , {title: "arándanos"}   ] 
 
-  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
-    expect(sortingFilms("Z to A")[0].title).toBe("Whisper of the Heart");
+  it("Debería retornar un arreglo ordenado de la A a la Z", () => {
+    expect(sortingFilms(mockDataSort,"A to Z")).toStrictEqual(mockResultAZ);
   });
-
-  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
-    expect(sortingFilms("Z to A")[0].title).toBe(
-      sortingFilms("A to Z")[19].title
-    );
+  it ("Deberia retornar un arreglo ordenado de la Z a la A", () => {
+    expect(sortingFilms(mockDataSort, "Z to A")).toStrictEqual(mockResultZA);
   });
-
-  it("Debería retornar peliculas ordenadas de la A a la Z u ordenadas de la Z a la A", () => {
-    expect(sortingFilms("Z to A")[1].title).toBe(
-      sortingFilms("A to Z")[18].title
-    );
   });
-});

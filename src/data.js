@@ -19,7 +19,7 @@ donde la condicion es que regrese el objeto, si corresponde la fecha con el año
  este valor year se toma desde el main, de let releaseValue = date.value; 
 es decir, se toma como referencia el valor que el usuario ha puesto en el input de fecha de estreno*/
 
-export function filterDate(year) {
+export function filterDate(year, films) {
   const realiseArray = films.filter(function (film) {
     return film.release_date === year;
     /* checando si release_date es igual al input value, o sea el año, cuando coincida, se agregara al nuevo arreglo
@@ -58,7 +58,7 @@ export function filterProducers(producer) {
   }
 }
 
-export function sortingFilms(orderOption) {
+export function sortingFilms(films, orderOption) {
   const filmsCopy = [...films];
   if (orderOption === "A to Z") {
     return filmsCopy.sort((a, b) => {
