@@ -6,6 +6,7 @@ import {
   filterDirectors,
   filterProducers,
   sortingFilms,
+  films,
 } from "./data.js";
 /*importando funcion de imprimir imagenes, release date y score */
 const postersContainer = document.querySelector(".posters");
@@ -32,7 +33,7 @@ const inputOrder = document.getElementById("select-order");
 
 inputOrder.addEventListener("input", (e) => {
   let orderOptionValue = e.target.value;
-  let sortedByOrder = sortingFilms(orderOptionValue);
+  let sortedByOrder = sortingFilms(orderOptionValue, films);
   postersContainer.innerHTML = sortedByOrder
     .map(function (x) {
       return `
@@ -54,7 +55,7 @@ date.addEventListener("input", (e) => {
   /* aqui, estamos haciendo que el valor que esta dentro de etiqueta span, cambie, segun el valor que reciba el input*/
   datesValues.innerHTML = releaseValue;
   /* pasando parametro del input, a la función de filterData de data.js */
-  let filteredByDate = filterDate(releaseValue);
+  let filteredByDate = filterDate(releaseValue, films);
   /* pidiendo que muestre solo las imagenes que corresponde al arreglo filtrado, 
  al contenedor donde se muestran todas las imagenes para esto-..
   aplicamos un .map a nuestro arreglo ya filtrado, pidiendo que devuelva por cada objeto 
