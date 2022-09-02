@@ -21,6 +21,7 @@ describe("filterDate", () => {
       { release_date: "1986" },
     ];
     let mockResult = [{ release_date: "ana" }, { release_date: "ana" }];
+
     expect(filterDate("ana", mockData)).toStrictEqual(mockResult);
   });
 });
@@ -95,5 +96,9 @@ describe("sortingFilms", () => {
   });
   it("Deberia retornar un arreglo ordenado de la Z a la A", () => {
     expect(sortingFilms(mockDataSort, "Z to A")).toStrictEqual(mockResultZA);
+  });
+
+  it("Deberia retornar las peliculas retornadas por default", () => {
+    expect(sortingFilms(mockDataSort, "default")).toStrictEqual(mockDataSort);
   });
 });

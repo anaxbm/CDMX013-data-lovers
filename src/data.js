@@ -27,7 +27,6 @@ export function filterDate(year, films) {
   });
   return realiseArray; /*retornando nuevo arreglo */
 }
-
 //console.log(filterDate("1986"));
 
 export function filterScore(score) {
@@ -60,7 +59,9 @@ export function filterProducers(producer) {
 
 export function sortingFilms(films, orderOption) {
   const filmsCopy = [...films];
-  if (orderOption === "A to Z") {
+  if (orderOption === "default") {
+    return films;
+  } else if (orderOption === "A to Z") {
     return filmsCopy.sort((a, b) => {
       if (a.title < b.title) {
         return -1;
