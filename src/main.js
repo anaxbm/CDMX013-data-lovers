@@ -11,7 +11,7 @@ import {
 
 const postersContainer = document.querySelector(".posters");
 /*SPANS */
-let datesValues = document.getElementById("rangeValue");
+const datesValues = document.getElementById("rangeValue");
 /*guardando etiqueda span de release date, que permite mostrar el valor al que el usuario cambia
 segun el valor que reciba...  */
 const scoreValues = document.getElementById("rangeScore");
@@ -38,7 +38,7 @@ date.addEventListener("input", (e) => {
   /* aqui, estamos haciendo que el valor que esta dentro de etiqueta span, cambie, segun el valor que reciba el input*/
   datesValues.innerHTML = releaseValue;
   /* pasando parametro del input, a la función de filterDate de data.js */
-  let filteredByDate = filterDate(films, releaseValue);
+  let filteredByDate = filterDate(releaseValue, films);
   /* pidiendo que muestre solo las imagenes que corresponde al arreglo filtrado, 
  al contenedor donde se muestran todas las imagenes para esto-..
   aplicamos un .map a nuestro arreglo ya filtrado, pidiendo que devuelva por cada objeto 
